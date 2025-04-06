@@ -27,12 +27,13 @@ app.get("/", (req, res) => {
 });
 
 
+
+*/
 //static files
 app.use(express.static(path.join(__dirname,"./client/build")));
 app.get("*",function(req,res){
   res.sendFile(path.join(__dirname,"./client/build/index.html"))
 });
-*/
 app.use("/api/v1/admin", require("./routes/Adminroutes"));
 app.use("/api/v1/tech", require("./routes/Techroutes"));
 app.use("/api/v1/tech/lab", require("./routes/Labroutes"));
